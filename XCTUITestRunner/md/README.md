@@ -1,3 +1,7 @@
+### WebDriverAgent
+WebDriverAgent简称WDA。它是由Facebook推出的一款移动端测试框架。它是在iOS客户端实现了一个WebDriver的Server，借助这个server，我们可以远程控制iOS设备进行测试。
+它更多的是测试人员进行自动化测试用的，所以在 [testerhome](https://testerhome.com/topics/4904) 上有一些文章对其进行了介绍。具体的文章链接可以参见文末的附录。
+
 ### 安装 libimobiledevice
 libimobiledevice 是一个使用原生协议与苹果iOS设备进行通信的库。通过这个库我们的 Mac OS 能够轻松获得 iOS 设备的信息。
 
