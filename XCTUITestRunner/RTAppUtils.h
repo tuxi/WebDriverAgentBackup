@@ -1,4 +1,4 @@
-////
+//
 // RTAppUtils.h
 // WebDriverAgent
 //
@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 获取设备信息
 + (NSDictionary *)getDeviceInfo;
+
+/// 生成唯一的id
++ (NSString *)genIdentifier;
 
 @end
 

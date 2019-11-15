@@ -1,4 +1,4 @@
-////
+//
 // RTAppUtils.m
 // WebDriverAgent
 //
@@ -91,6 +91,22 @@ do { \
   }
 
   return [localTimeZone name];
+}
+
+
+
++ (NSString *)genIdentifier {
+  
+  CFUUIDRef uuidRef =CFUUIDCreate(NULL);
+  
+  CFStringRef uuidStringRef =CFUUIDCreateString(NULL, uuidRef);
+  
+  NSString *uniqueId = (__bridge NSString *)(uuidStringRef);
+  if (uuidStringRef) {
+    CFBridgingRelease(uuidStringRef);    
+  }
+  return uniqueId;
+  
 }
 @end
 

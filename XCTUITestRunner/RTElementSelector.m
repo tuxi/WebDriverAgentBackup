@@ -245,16 +245,16 @@ RTElementUsingType RTElementUsingTypePredicateString = @"predicate string";
 
 - (RTFindElementParamter *)genFindElementParmter {
   if (self.uuid.length > 0) {
-    return [[RTFindElementParamter alloc] initWithUsing:RTElementUsingTypeId value:self.uuid];
+    return [[RTFindElementParamter alloc] initWithUsing:RTElementUsingTypeId value:(NSString *)self.uuid];
   }
   if (self.predicate.length > 0) {
-    return [[RTFindElementParamter alloc] initWithUsing:RTElementUsingTypePredicateString value:self.predicate];
+    return [[RTFindElementParamter alloc] initWithUsing:RTElementUsingTypePredicateString value:(NSString *)self.predicate];
   }
   if (self.xpath.length > 0) {
-    return [[RTFindElementParamter alloc] initWithUsing:RTElementUsingTypeXpath value:self.xpath];
+    return [[RTFindElementParamter alloc] initWithUsing:RTElementUsingTypeXpath value:(NSString *)self.xpath];
   }
   if (self.classChain.length > 0) {
-    return [[RTFindElementParamter alloc] initWithUsing:RTElementUsingTypeClassChain value:self.classChain];
+    return [[RTFindElementParamter alloc] initWithUsing:RTElementUsingTypeClassChain value:(NSString *)self.classChain];
 
   }
   NSString *chain = [self.parent_class_chains componentsJoinedByString:@""]?:@"";

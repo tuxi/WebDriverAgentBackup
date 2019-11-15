@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#  start.sh
+#  run.sh
 #  WebDriverAgent
 #
 #  Created by xiaoyuan on 2019/11/13.

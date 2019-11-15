@@ -10,13 +10,13 @@
 		07394265237AD3BE0033B45E /* AutomationScript.h in Headers */ = {isa = PBXBuildFile; fileRef = 07394263237AD3BE0033B45E /* AutomationScript.h */; };
 		07C6489D237AD93800EE9A27 /* FBXCodeCompatibility.h in Headers */ = {isa = PBXBuildFile; fileRef = EE5A24401F136C8D0078B1D9 /* FBXCodeCompatibility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07C648A2237BAB7D00EE9A27 /* RTAppUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 07C648A0237BAB7D00EE9A27 /* RTAppUtils.h */; };
-		07C648A3237BAB7D00EE9A27 /* RTAppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C648A1237BAB7D00EE9A27 /* RTAppUtils.m */; };
-		07C648A5237BFAB100EE9A27 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 07C648A4237BFAB100EE9A27 /* README.md */; };
-		07C648A7237BFAE100EE9A27 /* READMD_XCUIElementTypeAPI.md in Resources */ = {isa = PBXBuildFile; fileRef = 07C648A6237BFAE100EE9A27 /* READMD_XCUIElementTypeAPI.md */; };
-		07C648B5237C29AC00EE9A27 /* RTElementSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C648A9237BFD9200EE9A27 /* RTElementSelector.m */; };
 		07C64D31237D3CE100EE9A27 /* AutomationScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 07394262237AD3BE0033B45E /* AutomationScript.m */; };
-		07C64D33237D486800EE9A27 /* Issue.md in Resources */ = {isa = PBXBuildFile; fileRef = 07C64D32237D486800EE9A27 /* Issue.md */; };
-		07C64D36237D4F6A00EE9A27 /* 如何提高查找元素的性能.md in Resources */ = {isa = PBXBuildFile; fileRef = 07C64D35237D4F6A00EE9A27 /* 如何提高查找元素的性能.md */; };
+		07E7A8D0237E441D004DEED9 /* RTElementSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C648A9237BFD9200EE9A27 /* RTElementSelector.m */; };
+		07E7A8D1237E4422004DEED9 /* RTAppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C648A1237BAB7D00EE9A27 /* RTAppUtils.m */; };
+		07E7A8D2237E4948004DEED9 /* YYCache.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = 7155B40C224D5A5F0042A993 /* YYCache.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07E7A8D3237E4948004DEED9 /* RoutingHTTPServer.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = AD42DD2B1CF1238500806E5D /* RoutingHTTPServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07E7A8D4237E4948004DEED9 /* CocoaAsyncSocket.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = 710181F7211DF584002FD3A8 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07E7A8D7237E4E54004DEED9 /* RTCommander.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E7A8D6237E4E54004DEED9 /* RTCommander.m */; };
 		1357E296233D05240054BDB8 /* XCUIHitPointResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 1357E295233D05240054BDB8 /* XCUIHitPointResult.h */; };
 		1357E297233D05240054BDB8 /* XCUIHitPointResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 1357E295233D05240054BDB8 /* XCUIHitPointResult.h */; };
 		13815F6F2328D20400CDAB61 /* FBActiveAppDetectionPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 13815F6D2328D20400CDAB61 /* FBActiveAppDetectionPoint.h */; };
@@ -326,7 +326,6 @@
 		64B26508228C5514002A5025 /* XCUIElementDouble.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B26507228C5514002A5025 /* XCUIElementDouble.m */; };
 		64B2650A228CE4FF002A5025 /* FBTVNavigationTracker-Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 64B26509228CE4FF002A5025 /* FBTVNavigationTracker-Private.h */; };
 		64B2650B228CE4FF002A5025 /* FBTVNavigationTracker-Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 64B26509228CE4FF002A5025 /* FBTVNavigationTracker-Private.h */; };
-		7101820E211E1E19002FD3A8 /* CocoaAsyncSocket.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = 710181F7211DF584002FD3A8 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7101820F211E3EC9002FD3A8 /* CocoaAsyncSocket.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 710181F7211DF584002FD3A8 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		710C16CD21497A08006EA1D0 /* XCAccessibilityElement+FBComparison.h in Headers */ = {isa = PBXBuildFile; fileRef = 710C16CB21497A08006EA1D0 /* XCAccessibilityElement+FBComparison.h */; };
 		710C16CE21497A08006EA1D0 /* XCAccessibilityElement+FBComparison.m in Sources */ = {isa = PBXBuildFile; fileRef = 710C16CC21497A08006EA1D0 /* XCAccessibilityElement+FBComparison.m */; };
@@ -375,7 +374,6 @@
 		7155B424224D5BA10042A993 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7155B423224D5B980042A993 /* XCTest.framework */; };
 		7155B426224D5C130042A993 /* XCTAutomationSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7155B425224D5C130042A993 /* XCTAutomationSupport.framework */; };
 		7155B427224D5C170042A993 /* XCTAutomationSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7155B425224D5C130042A993 /* XCTAutomationSupport.framework */; };
-		7155B428224D5CB10042A993 /* YYCache.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = 7155B40C224D5A5F0042A993 /* YYCache.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7155B429224D5CC10042A993 /* YYCache.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = 641EE73A2240F49D00173FCB /* YYCache.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7155B42A224D5CC50042A993 /* CocoaAsyncSocket.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = 7155B411224D5AF90042A993 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7155D703211DCEF400166C20 /* FBMjpegServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7155D701211DCEF400166C20 /* FBMjpegServer.h */; };
@@ -428,7 +426,6 @@
 		71BD20731F86116100B36EC2 /* XCUIApplication+FBTouchAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 71BD20711F86116100B36EC2 /* XCUIApplication+FBTouchAction.h */; };
 		71BD20741F86116100B36EC2 /* XCUIApplication+FBTouchAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BD20721F86116100B36EC2 /* XCUIApplication+FBTouchAction.m */; };
 		71BD20781F869E0F00B36EC2 /* FBAppiumTouchActionsIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BD20771F869E0F00B36EC2 /* FBAppiumTouchActionsIntegrationTests.m */; };
-		71DC3003208759E1007671AA /* RoutingHTTPServer.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = AD42DD2B1CF1238500806E5D /* RoutingHTTPServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AD35D01A1CF1418E00870A75 /* RoutingHTTPServer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AD42DD2B1CF1238500806E5D /* RoutingHTTPServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AD35D0641CF1C2C300870A75 /* RoutingHTTPServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD42DD2B1CF1238500806E5D /* RoutingHTTPServer.framework */; };
 		AD35D06C1CF1C35500870A75 /* WebDriverAgentLib.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = EE158A991CBD452B00A3E3F0 /* WebDriverAgentLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -809,9 +806,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7155B428224D5CB10042A993 /* YYCache.framework in Copy frameworks */,
-				7101820E211E1E19002FD3A8 /* CocoaAsyncSocket.framework in Copy frameworks */,
-				71DC3003208759E1007671AA /* RoutingHTTPServer.framework in Copy frameworks */,
+				07E7A8D2237E4948004DEED9 /* YYCache.framework in Copy frameworks */,
+				07E7A8D3237E4948004DEED9 /* RoutingHTTPServer.framework in Copy frameworks */,
+				07E7A8D4237E4948004DEED9 /* CocoaAsyncSocket.framework in Copy frameworks */,
 				AD35D06C1CF1C35500870A75 /* WebDriverAgentLib.framework in Copy frameworks */,
 			);
 			name = "Copy frameworks";
@@ -841,10 +838,12 @@
 		07C648A6237BFAE100EE9A27 /* READMD_XCUIElementTypeAPI.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = READMD_XCUIElementTypeAPI.md; sourceTree = "<group>"; };
 		07C648A8237BFD9200EE9A27 /* RTElementSelector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTElementSelector.h; sourceTree = "<group>"; };
 		07C648A9237BFD9200EE9A27 /* RTElementSelector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTElementSelector.m; sourceTree = "<group>"; };
-		07C648B6237C4F8200EE9A27 /* start.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = start.sh; sourceTree = "<group>"; };
+		07C648B6237C4F8200EE9A27 /* run.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = run.sh; sourceTree = "<group>"; };
 		07C64D32237D486800EE9A27 /* Issue.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Issue.md; sourceTree = "<group>"; };
 		07C64D35237D4F6A00EE9A27 /* 如何提高查找元素的性能.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "如何提高查找元素的性能.md"; sourceTree = "<group>"; };
 		07E7A8CF237D6247004DEED9 /* iOS 定位方式 iOSNsPredicateString 详解.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "iOS 定位方式 iOSNsPredicateString 详解.md"; sourceTree = "<group>"; };
+		07E7A8D5237E4E54004DEED9 /* RTCommander.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTCommander.h; sourceTree = "<group>"; };
+		07E7A8D6237E4E54004DEED9 /* RTCommander.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTCommander.m; sourceTree = "<group>"; };
 		1357E295233D05240054BDB8 /* XCUIHitPointResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCUIHitPointResult.h; sourceTree = "<group>"; };
 		13815F6D2328D20400CDAB61 /* FBActiveAppDetectionPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBActiveAppDetectionPoint.h; sourceTree = "<group>"; };
 		13815F6E2328D20400CDAB61 /* FBActiveAppDetectionPoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBActiveAppDetectionPoint.m; sourceTree = "<group>"; };
@@ -2021,7 +2020,9 @@
 				07C648A1237BAB7D00EE9A27 /* RTAppUtils.m */,
 				07C648A8237BFD9200EE9A27 /* RTElementSelector.h */,
 				07C648A9237BFD9200EE9A27 /* RTElementSelector.m */,
-				07C648B6237C4F8200EE9A27 /* start.sh */,
+				07C648B6237C4F8200EE9A27 /* run.sh */,
+				07E7A8D5237E4E54004DEED9 /* RTCommander.h */,
+				07E7A8D6237E4E54004DEED9 /* RTCommander.m */,
 			);
 			name = WebDriverAgentRunner;
 			path = XCTUITestRunner;
@@ -2648,43 +2649,43 @@
 				TargetAttributes = {
 					641EE2D92240BBE300173FCB = {
 						CreatedOnToolsVersion = 10.1;
-						DevelopmentTeam = NKW67GFDHM;
+						ProvisioningStyle = Automatic;
 					};
 					641EE5D52240C5CA00173FCB = {
-						DevelopmentTeam = NKW67GFDHM;
+						DevelopmentTeam = 33TS6KJYJJ;
 						ProvisioningStyle = Manual;
 					};
 					64B264F8228C50E0002A5025 = {
 						CreatedOnToolsVersion = 10.2.1;
-						DevelopmentTeam = NKW67GFDHM;
+						DevelopmentTeam = 33TS6KJYJJ;
 						ProvisioningStyle = Automatic;
 					};
 					EE158A981CBD452B00A3E3F0 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = NKW67GFDHM;
+						DevelopmentTeam = 33TS6KJYJJ;
 					};
 					EE2202031ECC612200A29571 = {
-						DevelopmentTeam = NKW67GFDHM;
+						DevelopmentTeam = 33TS6KJYJJ;
 					};
 					EE5095DD1EBCC9090028E2FE = {
-						DevelopmentTeam = NKW67GFDHM;
+						DevelopmentTeam = 33TS6KJYJJ;
 					};
 					EE836C011C0F118600D87246 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = NKW67GFDHM;
+						DevelopmentTeam = 33TS6KJYJJ;
 					};
 					EE9B75D31CF7956C00275851 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = NKW67GFDHM;
+						DevelopmentTeam = 33TS6KJYJJ;
 					};
 					EE9B75EB1CF7956C00275851 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = NKW67GFDHM;
+						DevelopmentTeam = 33TS6KJYJJ;
 						TestTargetID = EE9B75D31CF7956C00275851;
 					};
 					EEF988291C486603005CA669 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = NKW67GFDHM;
+						DevelopmentTeam = 33TS6KJYJJ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2743,8 +2744,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07C64D33237D486800EE9A27 /* Issue.md in Resources */,
-				07C648A5237BFAB100EE9A27 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2788,8 +2787,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07C64D36237D4F6A00EE9A27 /* 如何提高查找元素的性能.md in Resources */,
-				07C648A7237BFAE100EE9A27 /* READMD_XCUIElementTypeAPI.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2964,7 +2961,6 @@
 				EE158AC51CBD456F00A3E3F0 /* FBOrientationCommands.m in Sources */,
 				641EE7082240CDEB00173FCB /* XCUIElement+FBTVFocuse.m in Sources */,
 				EEC9EED720064FAA00BC0D5B /* XCUICoordinate+FBFix.m in Sources */,
-				07C648A3237BAB7D00EE9A27 /* RTAppUtils.m in Sources */,
 				EE158AEB1CBD456F00A3E3F0 /* FBRuntimeUtils.m in Sources */,
 				EEE376461D59F81400ED88DD /* XCUIElement+FBUtilities.m in Sources */,
 				EE9B76A91CF7A43900275851 /* FBLogger.m in Sources */,
@@ -2989,7 +2985,6 @@
 				EE158AD51CBD456F00A3E3F0 /* FBExceptionHandler.m in Sources */,
 				EE5A24421F136D360078B1D9 /* FBXCodeCompatibility.m in Sources */,
 				EEE376421D59F81400ED88DD /* XCElementSnapshot+FBHelpers.m in Sources */,
-				07C648B5237C29AC00EE9A27 /* RTElementSelector.m in Sources */,
 				EE158AE91CBD456F00A3E3F0 /* FBElementTypeTransformer.m in Sources */,
 				EE158AF61CBD456F00A3E3F0 /* FBApplication.m in Sources */,
 				715AFAC21FFA29180053896D /* FBScreen.m in Sources */,
@@ -3106,8 +3101,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07E7A8D0237E441D004DEED9 /* RTElementSelector.m in Sources */,
 				EE9AB8011CAEE048008C271F /* UITestingUITests.m in Sources */,
 				07C64D31237D3CE100EE9A27 /* AutomationScript.m in Sources */,
+				07E7A8D7237E4E54004DEED9 /* RTCommander.m in Sources */,
+				07E7A8D1237E4422004DEED9 /* RTAppUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3189,16 +3187,19 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = NKW67GFDHM;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WebDriverAgentRunner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpface.WebDriverAgentRunner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiteng.WebDriverAgentRunner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
@@ -3222,7 +3223,7 @@
 				INFOPLIST_FILE = WebDriverAgentRunner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpface.WebDriverAgentRunner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiteng.WebDriverAgentRunner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -3238,7 +3239,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = NO;
-				DEVELOPMENT_TEAM = NKW67GFDHM;
+				DEVELOPMENT_TEAM = 33TS6KJYJJ;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3253,7 +3254,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpface.WebDriverAgentLib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiteng.WebDriverAgentLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
@@ -3311,7 +3312,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpface.WebDriverAgentLib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiteng.WebDriverAgentLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
@@ -3359,7 +3360,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = NKW67GFDHM;
+				DEVELOPMENT_TEAM = 33TS6KJYJJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -3539,7 +3540,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = NO;
-				DEVELOPMENT_TEAM = NKW67GFDHM;
+				DEVELOPMENT_TEAM = 33TS6KJYJJ;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3559,7 +3560,7 @@
 					"$(PROJECT_DIR)/XCTUITestRunner/tsprite/Package/Library/MobileSubstrate/DynamicLibraries",
 				);
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpface.WebDriverAgentLib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiteng.WebDriverAgentLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -3621,7 +3622,7 @@
 					"$(PROJECT_DIR)/XCTUITestRunner/tsprite/Package/Library/MobileSubstrate/DynamicLibraries",
 				);
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpface.WebDriverAgentLib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiteng.WebDriverAgentLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -3660,7 +3661,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = NKW67GFDHM;
+				DEVELOPMENT_TEAM = 33TS6KJYJJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -3668,7 +3669,7 @@
 				INFOPLIST_FILE = WebDriverAgentTests/IntegrationTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpface.IntegrationTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiteng.IntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = IntegrationApp;
 			};
@@ -3687,7 +3688,7 @@
 				INFOPLIST_FILE = WebDriverAgentTests/IntegrationTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpface.IntegrationTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiteng.IntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = IntegrationApp;
 			};
@@ -3699,7 +3700,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = NKW67GFDHM;
+				DEVELOPMENT_TEAM = 33TS6KJYJJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -3707,7 +3708,7 @@
 				INFOPLIST_FILE = WebDriverAgentTests/IntegrationTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpface.IntegrationTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiteng.IntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = IntegrationApp;
 			};
@@ -3726,7 +3727,7 @@
 				INFOPLIST_FILE = WebDriverAgentTests/IntegrationTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpface.IntegrationTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiteng.IntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = IntegrationApp;
 			};
@@ -3737,7 +3738,7 @@
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = NKW67GFDHM;
+				DEVELOPMENT_TEAM = 33TS6KJYJJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -3745,7 +3746,7 @@
 				INFOPLIST_FILE = WebDriverAgentTests/UnitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpface.WebDriverAgentCoreTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiteng.WebDriverAgentCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -3762,7 +3763,7 @@
 				INFOPLIST_FILE = WebDriverAgentTests/UnitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpface.WebDriverAgentCoreTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiteng.WebDriverAgentCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -3773,11 +3774,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = NKW67GFDHM;
+				DEVELOPMENT_TEAM = 33TS6KJYJJ;
 				INFOPLIST_FILE = WebDriverAgentTests/IntegrationApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpface.IntegrationApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiteng.IntegrationApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -3791,7 +3792,7 @@
 				INFOPLIST_FILE = WebDriverAgentTests/IntegrationApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpface.IntegrationApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiteng.IntegrationApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -3802,7 +3803,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = NKW67GFDHM;
+				DEVELOPMENT_TEAM = 33TS6KJYJJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -3810,7 +3811,7 @@
 				INFOPLIST_FILE = WebDriverAgentTests/IntegrationTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpface.IntegrationTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiteng.IntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = IntegrationApp;
 			};
@@ -3829,7 +3830,7 @@
 				INFOPLIST_FILE = WebDriverAgentTests/IntegrationTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpface.IntegrationTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiteng.IntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = IntegrationApp;
 			};
@@ -3844,11 +3845,12 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = NKW67GFDHM;
+				DEVELOPMENT_TEAM = 33TS6KJYJJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = WebDriverAgentRunner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -3856,7 +3858,7 @@
 					"$(inherited)",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpface.WebDriverAgentRunner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiteng.WebDriverAgentRunner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -3874,6 +3876,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = WebDriverAgentRunner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -3881,7 +3884,7 @@
 					"$(inherited)",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpface.WebDriverAgentRunner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruiteng.WebDriverAgentRunner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USES_XCTRUNNER = YES;
 			};
