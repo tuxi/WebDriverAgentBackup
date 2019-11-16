@@ -62,3 +62,35 @@ WebDriverAgentRunner-Runner.app (341) encountered an error (Early unexpected exi
 bjc[673]: Class GCDAsyncSocket is implemented in both /private/var/containers/Bundle/Application/6CD19E07-EAA6-4651-86E3-948BF1822DAA/WebDriverAgentRunner-Runner.app/PlugIns/WebDriverAgentRunner.xctest/Frameworks/WebDriverAgentLib.framework/Frameworks/RoutingHTTPServer.framework/RoutingHTTPServer (0x108ea5788) and /private/var/containers/Bundle/Application/6CD19E07-EAA6-4651-86E3-948BF1822DAA/WebDriverAgentRunner-Runner.app/PlugIns/WebDriverAgentRunner.xctest/Frameworks/WebDriverAgentLib.framework/Frameworks/CocoaAsyncSocket.framework/CocoaAsyncSocket (0x108e0c6b8). One of the two will be used. Which one is undefined.
 ```
 可忽略此日志
+
+
+### 因为它已损坏或丢失必要的资源。 请尝试重新安装软件包
+```
+2019-11-16 18:47:56.424273+0800 MobileAutomationUITests-Runner[9973:647501] 未能载入软件包“MobileAutomationUITests”，因为它已损坏或丢失必要的资源。 请尝试重新安装软件包。
+2019-11-16 18:47:56.424371+0800 MobileAutomationUITests-Runner[9973:647501] (dlopen_preflight(/var/containers/Bundle/Application/E70055A3-4085-42EA-8946-26A38B3080C3/MobileAutomationUITests-Runner.app/PlugIns/MobileAutomationUITests.xctest/MobileAutomationUITests): Library not loaded: @rpath/MobileAutomationLib.framework/MobileAutomationLib
+  Referenced from: /var/containers/Bundle/Application/E70055A3-4085-42EA-8946-26A38B3080C3/MobileAutomationUITests-Runner.app/PlugIns/MobileAutomationUITests.xctest/MobileAutomationUITests
+  Reason: image not found)
+  ```
+  这是问题可能由两种情况引发： 
+  1. 在UITest target中引入的动态库，其本身又依赖其他动态库，所以需要在UITest target的Build Phases中添加Copy framework 并将其依赖的库加入
+  [参考资料](https://www.cnblogs.com/grandyang/p/8203024.html)
+  2.动态库签名与UITest 签名不一致导致。
+  
+  ### Command CodeSign failed with a nonzero exit code
+  ```
+  CodeSign /Users/swae/Library/Developer/Xcode/DerivedData/MobileAutomation-dacujukpfzfhafbmfmesuiyfmlrg/Build/Products/Debug-iphoneos/MobileAutomationUITests-Runner.app/PlugIns/MobileAutomationUITests.xctest/Frameworks/TesseractOCR.framework (in target 'MobileAutomationUITests' from project 'MobileAutomation')
+      cd /Users/swae/Documents/Github/MobileAutomation/MobileAutomation
+      export CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+      
+  Signing Identity:     "Apple Development: Xiaoyuan Yang (29H47J82NP)"
+  Provisioning Profile: "iOS Team Provisioning Profile: *"
+                        (bcca1c8c-5f4b-4077-9dba-870c9a69f351)
+
+      /usr/bin/codesign --force --sign 7BB1896DCDD3C48C1DFDD5BDCA49B0A47DAB5253 --timestamp=none --preserve-metadata=identifier,entitlements,flags /Users/swae/Library/Developer/Xcode/DerivedData/MobileAutomation-dacujukpfzfhafbmfmesuiyfmlrg/Build/Products/Debug-iphoneos/MobileAutomationUITests-Runner.app/PlugIns/MobileAutomationUITests.xctest/Frameworks/TesseractOCR.framework
+
+  /Users/swae/Library/Developer/Xcode/DerivedData/MobileAutomation-dacujukpfzfhafbmfmesuiyfmlrg/Build/Products/Debug-iphoneos/MobileAutomationUITests-Runner.app/PlugIns/MobileAutomationUITests.xctest/Frameworks/TesseractOCR.framework: bundle format is ambiguous (could be app or framework)
+  Command CodeSign failed with a nonzero exit code
+  ```
+  解决方法：
+ 将WebDriverAgentRunner的Build Phases 下面的framework 取消勾选Code sign on copy。
+[参考资料](https://objc.com/article/76)
