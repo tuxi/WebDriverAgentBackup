@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 生成唯一的id
 + (NSString *)genIdentifier;
 
++ (NSString *)monthAndDay;
+
 @end
 
 NS_ASSUME_NONNULL_END

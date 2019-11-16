@@ -108,5 +108,14 @@ do { \
   return uniqueId;
   
 }
+
++ (NSString *)monthAndDay {
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+  [dateFormatter setDateFormat:@"MM/dd"];
+  return [dateFormatter stringFromDate:[NSDate date]];
+}
+
+
+
 @end
 

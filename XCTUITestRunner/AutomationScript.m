@@ -10,6 +10,8 @@
 #import "AutomationScript.h"
 #import "RTCommander.h"
 #import "RTAppUtils.h"
+#import <WebDriverAgentLib/XCUIElement.h>
+//#import <MobileAutomationLib/MobileAutomationLib.h>
 
 static NSString *screenshotDirectory() {
   NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -22,6 +24,7 @@ static NSString *screenshotDirectory() {
 @interface AutomationScript ()
 
 @property (nonatomic, strong) RTCommander *commander;
+//@property (nonatomic, strong) TouchOpt *opt;
 
 @end
 
@@ -47,16 +50,15 @@ static NSString *screenshotDirectory() {
   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
     
     [self.commander unlockWithError:nil];
-    
-
     [self testShenDiaoXiaLv];
-    
-//    FBApplication *app = [FBSession activeSession].activeApplication;
-//    NSLog(@"%@", app);
     
 //    [self testTapSuspensionButton];
     
 //    [self testFillTextForPerfrctGame];
+    
+//    [self.opt readyServer];
+    
+    
     
   });
 }
@@ -163,7 +165,7 @@ static NSString *screenshotDirectory() {
 //      [self.commander tapWithPoint:datePoint error:nil];
 //      sleep(3.0);
       
-      XCUIElement *dateElement = [self.commander findElementsWithClassName:nil name:@"11/15" label:nil].firstObject;
+      XCUIElement *dateElement = [self.commander findElementsWithClassName:nil name:[RTAppUtils monthAndDay] label:nil].firstObject;
       XCUICoordinate *dateCoordinate = [dateElement coordinateWithNormalizedOffset:CGVectorMake(0, 0)];
       CGPoint dateElementScreenPoint = dateCoordinate.screenPoint;
       NSLog(@"dateElementScreenPoint:%@", NSStringFromCGPoint(dateElementScreenPoint));
@@ -248,6 +250,12 @@ static NSString *screenshotDirectory() {
 //  }
   
   NSLog(@"神雕侠侣测试脚本执行完毕");
+}
+
+- (void)testScroll {
+ [self.commander swipeFromPoint:CGPointMake(100, 280) toPoint:CGPointMake(300, 280) duration:10.0 error:nil];
+  [self.commander swipeFromPoint:CGPointMake(300, 280) toPoint:CGPointMake(100, 280) duration:10.0 error:nil];
+  sleep(5.0);
 }
 
 - (void)testFindElements {
@@ -427,5 +435,12 @@ static NSString *screenshotDirectory() {
   }
   return _commander;
 }
+
+//- (TouchOpt *)opt {
+//  if (!_opt) {
+//    _opt = [TouchOpt new];
+//  }
+//  return _opt;
+//}
 
 @end

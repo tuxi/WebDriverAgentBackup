@@ -57,6 +57,15 @@ static NSString *screenshotDirectory() {
   return YES;
 }
 
+- (BOOL)swipeFromPoint:(CGPoint)startPoint toPoint:(CGPoint)endPoint duration:(NSTimeInterval)duration error:(NSError * _Nullable *)error {
+  XCUICoordinate *endCoordinate = [self.class gestureCoordinateWithCoordinate:endPoint application:[FBSession activeSession].activeApplication shouldApplyOrientationWorkaround:isSDKVersionLessThan(@"11.0")];
+  XCUICoordinate *startCoordinate = [self.class gestureCoordinateWithCoordinate:startPoint application:[FBSession activeSession].activeApplication shouldApplyOrientationWorkaround:isSDKVersionLessThan(@"11.0")];
+  [startCoordinate pressForDuration:duration thenDragToCoordinate:endCoordinate];
+  return YES;
+}
+
+
+
 - (BOOL)screenshotWithDirectory:(NSString *)directory fileName:(NSString *)fileName error:(NSError * _Nullable *)error
 {
   if (fileName.length == 0) {
@@ -114,6 +123,13 @@ static NSString *screenshotDirectory() {
   }
   return YES;
 }
+
+- (BOOL)tapHoldWithPoint:(CGPoint)tapPoint duration:(NSTimeInterval)duration error:(NSError * _Nullable *)error {
+   XCUICoordinate *pressCoordinate = [self.class gestureCoordinateWithCoordinate:tapPoint application:[FBSession activeSession].activeApplication shouldApplyOrientationWorkaround:isSDKVersionLessThan(@"11.0")];
+   [pressCoordinate pressForDuration:duration];
+  return YES;
+}
+
 
 - (BOOL)clickWithPoint:(CGPoint)tapPoint error:(NSError * _Nullable *)error {
   XCUIElement *element = [FBSession activeSession].activeApplication;
