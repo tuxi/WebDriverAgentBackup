@@ -7,28 +7,29 @@
 //
 
 #import "RTCommander.h"
-#import <WebDriverAgentLib/FBMathUtils.h>
-#import <WebDriverAgentLib/NSPredicate+FBFormat.h>
-#import <WebDriverAgentLib/XCUICoordinate.h>
-#import <WebDriverAgentLib/XCUIDevice.h>
-#import <WebDriverAgentLib/XCUIElement+FBIsVisible.h>
+#import "FBMathUtils.h"
+#import "NSPredicate+FBFormat.h"
+#import "XCUICoordinate.h"
+#import "XCUIDevice.h"
+#import "XCUIElement+FBIsVisible.h"
 #import "XCUIElement+FBPickerWheel.h"
-#import <WebDriverAgentLib/XCUIElement+FBScrolling.h>
-#import <WebDriverAgentLib/XCUIElement+FBTap.h>
-#import <WebDriverAgentLib/XCUIElement+FBForceTouch.h>
-#import <WebDriverAgentLib/XCUIElement+FBTyping.h>
-#import <WebDriverAgentLib/XCUIElement+FBUtilities.h>
-#import <WebDriverAgentLib/XCUIElement+FBWebDriverAttributes.h>
+#import "XCUIElement+FBScrolling.h"
+#import "XCUIElement+FBTap.h"
+#import "XCUIElement+FBForceTouch.h"
+#import "XCUIElement+FBTyping.h"
+#import "XCUIElement+FBUtilities.h"
+#import "XCUIElement+FBWebDriverAttributes.h"
 #import "XCUIElement+FBTVFocuse.h"
-#import <WebDriverAgentLib/FBElementTypeTransformer.h>
-#import <WebDriverAgentLib/XCUIElement.h>
-#import <WebDriverAgentLib/XCUIElementQuery.h>
-#import <WebDriverAgentLib/FBRuntimeUtils.h>
-#import <WebDriverAgentLib/FBXCodeCompatibility.h>
+#import "FBElementTypeTransformer.h"
+#import "XCUIElement.h"
+#import "XCUIElementQuery.h"
+#import "FBRuntimeUtils.h"
+#import "FBXCodeCompatibility.h"
 #import "XCUIElement+FBClassChain.h"
 #import "FBPredicate.h"
 #import "FBPasteboard.h"
 #import "RTElementSelector.h"
+
 
 static NSString *screenshotDirectory() {
   NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -413,16 +414,6 @@ static NSString *screenshotDirectory() {
   return alertText;
 }
 
-+ (id<FBResponsePayload>)handleAlertGetTextCommand:(FBRouteRequest *)request
-{
-  FBSession *session = request.session;
-  NSString *alertText = [FBAlert alertWithApplication:session.activeApplication].text;
-  if (!alertText) {
-    return FBResponseWithStatus([FBCommandStatus noAlertOpenErrorWithMessage:nil
-                                                                   traceback:nil]);
-  }
-  return FBResponseWithObject(alertText);
-}
 
 //static void cachedElements(NSArray<XCUIElement *> *elements, FBElementCache *elementCache, BOOL compact)
 //{
