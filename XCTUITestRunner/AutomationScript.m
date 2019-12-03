@@ -10,6 +10,7 @@
 #import "AutomationScript.h"
 #import <WebDriverAgentLib/WebDriverAgentLibPublicHeader.h>
 #import "RTAppUtils.h"
+#import <WebDriverAgentLib/XCUIElement.h>
 
 //#import <MobileAutomationLib/MobileAutomationLib.h>
 
