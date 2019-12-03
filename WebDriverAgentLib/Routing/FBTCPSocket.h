@@ -7,7 +7,9 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-#import <CocoaAsyncSocket/CocoaAsyncSocket.h>
+//#import <CocoaAsyncSocket/CocoaAsyncSocket.h>
+// 使用import导入, 再使用cocoapods时会编译不通过
+@import CocoaAsyncSocket;
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -137,6 +137,7 @@ typedef NS_ENUM(NSInteger, RTPasteBoardContentType) {
 /// @param className 要查找的类名
 /// @param name 控件的名称，比如控件的text
 /// @param label 比如button 的icon名称 ， 比如完美世界游戏左侧悬浮窗的名称为common toolbar icon normal
+/// @return 返回XCUIElement*数组
 - (NSArray * _Nullable)findElementsWithClassName:(NSString *_Nullable)className name:(NSString *_Nullable)name label:(NSString *_Nullable)label;
 
 //- (NSArray<XCUIElement *> * _Nullable)findElementsWithClassName:(NSString *_Nullable)className name:(NSString *_Nullable)name label:(NSString *_Nullable)label;

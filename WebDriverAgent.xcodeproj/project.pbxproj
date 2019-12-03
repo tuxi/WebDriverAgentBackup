@@ -964,7 +964,7 @@
 		07A0A4862396439500560965 /* LSApplicationWorkspace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSApplicationWorkspace.h; sourceTree = "<group>"; };
 		07A0A4882396439500560965 /* UIKeyboardImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKeyboardImpl.h; sourceTree = "<group>"; };
 		07A0A48A2396439500560965 /* AXSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXSettings.h; sourceTree = "<group>"; };
-		07A0A5B2239693F000560965 /* WebDriverAgentLibPublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebDriverAgentLibPublicHeader.h; path = WebDriverAgentLib/WebDriverAgentLibPublicHeader.h; sourceTree = SOURCE_ROOT; };
+		07A0A5B2239693F000560965 /* WebDriverAgentLibPublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebDriverAgentLibPublicHeader.h; path = WebDriverAgentLib/Public/WebDriverAgentLibPublicHeader.h; sourceTree = SOURCE_ROOT; };
 		07C648A0237BAB7D00EE9A27 /* RTAppUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTAppUtils.h; sourceTree = "<group>"; };
 		07C648A1237BAB7D00EE9A27 /* RTAppUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTAppUtils.m; sourceTree = "<group>"; };
 		07C648A4237BFAB100EE9A27 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -1530,17 +1530,18 @@
 			path = AccessibilityUtilities;
 			sourceTree = "<group>";
 		};
-		07A0A565239646DA00560965 /* Custom */ = {
+		07A0A565239646DA00560965 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				07A0A5B2239693F000560965 /* WebDriverAgentLibPublicHeader.h */,
 				07C648A8237BFD9200EE9A27 /* RTElementSelector.h */,
 				07C648A9237BFD9200EE9A27 /* RTElementSelector.m */,
 				07E7A8D5237E4E54004DEED9 /* RTCommander.h */,
 				07E7A8D6237E4E54004DEED9 /* RTCommander.m */,
 				D2A62283237FEF0E00792CC2 /* RTCommanderProtocol.h */,
 			);
-			name = Custom;
-			path = WebDriverAgentLib/Custom;
+			name = Public;
+			path = WebDriverAgentLib/Public;
 			sourceTree = SOURCE_ROOT;
 		};
 		07C64D34237D4F5600EE9A27 /* md */ = {
@@ -2018,7 +2019,7 @@
 		EEC288F81BF0ED2500B4DC79 /* WebDriverAgentLib */ = {
 			isa = PBXGroup;
 			children = (
-				07A0A565239646DA00560965 /* Custom */,
+				07A0A565239646DA00560965 /* Public */,
 				07A0A4182396439500560965 /* PrivateHeaders */,
 				EE9AB73E1CAEDF0C008C271F /* Categories */,
 				EE9AB74F1CAEDF0C008C271F /* Commands */,
@@ -2037,7 +2038,6 @@
 				EE9AB7681CAEDF0C008C271F /* FBApplicationProcessProxy.h */,
 				EE9AB7691CAEDF0C008C271F /* FBApplicationProcessProxy.m */,
 				EE158B5D1CBD479000A3E3F0 /* Info.plist */,
-				07A0A5B2239693F000560965 /* WebDriverAgentLibPublicHeader.h */,
 			);
 			name = WebDriverAgentLib;
 			path = XCTWebDriverAgentLib;

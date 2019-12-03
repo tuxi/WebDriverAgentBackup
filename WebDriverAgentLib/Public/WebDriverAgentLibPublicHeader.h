@@ -9,8 +9,7 @@
 #ifndef WebDriverAgentLibPublicHeader_h
 #define WebDriverAgentLibPublicHeader_h
 
-#import <WebDriverAgentLib/RTCommander.h>
-#import <WebDriverAgentLib/RTCommanderProtocol.h>
-#import <WebDriverAgentLib/XCUIElement.h>
+#import "RTCommander.h"
+#import "RTCommanderProtocol.h"
 
 #endif /* WebDriverAgentLibPublicHeader_h */
