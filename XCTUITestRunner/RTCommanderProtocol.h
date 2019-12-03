@@ -49,11 +49,27 @@ typedef NS_ENUM(NSInteger, RTPasteBoardContentType) {
 /// @return 返回值bool类型, YES 代表成功 NO 失败
 - (BOOL)screenshotWithDirectory:(NSString *_Nullable)directory fileName:(NSString *)fileName error:(NSError * _Nullable __autoreleasing *)error;
 
+/// 获取屏幕截图
+/// @param scale 缩放比率 0 ~ 1
+/// @param error 返回的错误
+/// @return 返回值为图片的data
+- (NSData * _Nullable)screenshotDataWithScale:(CGFloat)scale error:(NSError * _Nullable __autoreleasing *)error;
+
+- (UIImage *_Nullable)screenshotImageWithScale:(CGFloat)scale error:(NSError * _Nullable __autoreleasing *)error;
+
 /// 点击事件
 /// @param tapPoint 要点击的坐标
 /// @param error 返回失败错误的信息
 /// @return 返回值bool类型, YES 代表成功 NO 失败
 - (BOOL)tapWithPoint:(CGPoint)tapPoint error:(NSError * _Nullable __autoreleasing *)error;
+
+/// 点击事件
+/// @param className 点击的元素的过滤条件 类型名称
+/// @param name 点击的元素的过滤条件 元素的名称
+/// @param label 点击的元素的过滤条件 比如button 的icon名称
+/// @param error 返回失败错误的信息
+/// @return 返回值bool类型, YES 代表成功 NO 失败
+- (BOOL)tapWithClassName:(NSString *_Nullable)className name:(NSString *_Nullable)name label:(NSString *_Nullable)label error:(NSError * _Nullable __autoreleasing *)error;
 
 
 /// 长按事件
@@ -102,7 +118,13 @@ typedef NS_ENUM(NSInteger, RTPasteBoardContentType) {
 /// @param text 需要填充的文本, 尾部加入\n会执行键盘下一步操作, 比如搜索框会执行搜索
 /// @param className 要填充文本的控件类型 extern NSArray *kELEMENTTypes(void);
 /// @param name 控件的名称, 可联合className
-- (BOOL)setElementText:(NSString *)text forClassName:(NSString *)className name:(NSString *_Nullable)name  error:(NSError * _Nullable __autoreleasing *)error;
+/// @param tryCount 尝试的次数 填充文本可能会失败, 可多次重试, 最少1次
+- (BOOL)setElementText:(NSString *)text forClassName:(NSString *)className name:(NSString *_Nullable)name tryCount:(NSInteger)tryCount error:(NSError * _Nullable __autoreleasing *)error;
+
+- (BOOL)setElementText:(NSString *)text forClassName:(NSString *)className name:(NSString *_Nullable)name error:(NSError * _Nullable __autoreleasing *)error;
+
+/// 直接设置键盘输入文本, 前提键盘必须弹出的
+- (BOOL)setKeyboardTypeText:(NSString *)text error:(NSError **)error;
 
 #if !TARGET_OS_TV
 /// 给剪切板设置内容

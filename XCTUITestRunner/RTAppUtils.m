@@ -103,7 +103,7 @@ do { \
   
   NSString *uniqueId = (__bridge NSString *)(uuidStringRef);
   if (uuidStringRef) {
-    CFBridgingRelease(uuidStringRef);    
+    CFBridgingRelease(uuidStringRef);
   }
   return uniqueId;
   

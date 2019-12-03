@@ -840,6 +840,8 @@
 /* Begin PBXFileReference section */
 		07394262237AD3BE0033B45E /* AutomationScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutomationScript.m; sourceTree = "<group>"; };
 		07394263237AD3BE0033B45E /* AutomationScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutomationScript.h; sourceTree = "<group>"; };
+		07A0A4142396320700560965 /* libimobiledevice.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = libimobiledevice.md; sourceTree = "<group>"; };
+		07A0A4152396320800560965 /* README_MonkeyDev.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README_MonkeyDev.md; sourceTree = "<group>"; };
 		07C648A0237BAB7D00EE9A27 /* RTAppUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTAppUtils.h; sourceTree = "<group>"; };
 		07C648A1237BAB7D00EE9A27 /* RTAppUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTAppUtils.m; sourceTree = "<group>"; };
 		07C648A4237BFAB100EE9A27 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -1360,6 +1362,8 @@
 		07C64D34237D4F5600EE9A27 /* md */ = {
 			isa = PBXGroup;
 			children = (
+				07A0A4142396320700560965 /* libimobiledevice.md */,
+				07A0A4152396320800560965 /* README_MonkeyDev.md */,
 				07C648A4237BFAB100EE9A27 /* README.md */,
 				07C64D32237D486800EE9A27 /* Issue.md */,
 				07C648A6237BFAE100EE9A27 /* READMD_XCUIElementTypeAPI.md */,
@@ -2658,6 +2662,7 @@
 				TargetAttributes = {
 					641EE2D92240BBE300173FCB = {
 						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = NKW67GFDHM;
 						ProvisioningStyle = Automatic;
 					};
 					641EE5D52240C5CA00173FCB = {
@@ -3200,7 +3205,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = NKW67GFDHM;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = WebDriverAgentRunner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

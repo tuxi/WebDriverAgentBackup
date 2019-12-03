@@ -349,6 +349,7 @@ static NSString *screenshotDirectory() {
   NSLog(@"喜乐排行app测试脚本执行完毕");
 }
 
+
 - (void)testDismissAlert {
   NSString *alertText = [self.commander getAlertText];
   NSLog(@"%@", alertText);
@@ -393,7 +394,7 @@ static NSString *screenshotDirectory() {
 }
 
 - (void)testHttpConnection {
-    
+    // XCUITest的project中无http及https的能力, 可通过在iOS设备中设置网络代理的方式实现网络请求
   //  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
   //
   //

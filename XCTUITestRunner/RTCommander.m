@@ -38,6 +38,17 @@ static NSString *screenshotDirectory() {
 
 @implementation RTCommander
 
+@dynamic commander;
+
++ (RTCommander *)commander {
+  static id _instance;
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    _instance = [RTCommander new];
+  });
+  return _instance;
+}
+
 - (BOOL)swipeWithDirection:(RTSwipedirection)direction error:(NSError * _Nullable *)error {
   XCUIElement *element = [FBSession activeSession].activeApplication;
   if (direction == RTSwipedirectionUp) {
@@ -89,9 +100,8 @@ static NSString *screenshotDirectory() {
     }
   }
   
-  XCUIElement *element = [FBSession activeSession].activeApplication;
   NSError *screenShotError;
-  NSData *screenshotData = [element fb_screenshotWithError:&screenShotError];
+  NSData *screenshotData = [self screenshotDataWithScale:1 error:&screenShotError];
   if (screenShotError) {
     if (error) {
       *error = screenShotError;
@@ -106,23 +116,95 @@ static NSString *screenshotDirectory() {
   return YES;
 }
 
+- (NSData *)screenshotDataWithScale:(CGFloat)scale error:(NSError * _Nullable __autoreleasing *)error
+{
+  UIImage *screenshotImage = [self screenshotImageWithScale:scale error:error];
+  return UIImagePNGRepresentation(screenshotImage);
+}
+
+- (UIImage *)screenshotImageWithScale:(CGFloat)scale error:(NSError * _Nullable __autoreleasing *)error
+{
+  NSData *screenshotData = [[XCUIDevice sharedDevice] fb_screenshotWithError:error];
+  // 通过XCUElement 截图会导致截图颠倒
+//  XCUIElement *element = [FBSession activeSession].activeApplication;
+//  NSData *screenshotData = [element fb_screenshotWithError:&screenShotError];
+  if (*error) {
+    return nil;
+  }
+  UIImage *screenshotImage = [UIImage imageWithData:screenshotData];
+  // 需要修改图片的size为屏幕的size, 不然是按照2倍和3倍的size, 导致识图失败
+  screenshotImage = [self.class scaleToSize:screenshotImage size:[self getWindowSize] scale:scale];
+  return screenshotImage;
+}
+
+/**
+ *  改变图片的大小
+ *
+ *  @param img     需要改变的图片
+ *  @param newsize 新图片的大小
+ *  @param scale 代表缩放, 0代表不缩放
+ *
+ *  @return 返回修改后的新图片
+ */
++ (UIImage *)scaleToSize:(UIImage *)img size:(CGSize)newsize scale:(CGFloat)scale {
+  // 创建一个bitmap的context
+  // 并把它设置成为当前正在使用的context
+  UIGraphicsBeginImageContextWithOptions(newsize, NO, scale);
+  // 绘制改变大小的图片
+  [img drawInRect:CGRectMake(0, 0, newsize.width, newsize.height)];
+  // 从当前context中创建一个改变大小后的图片
+  UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+  // 使当前的context出堆栈
+  UIGraphicsEndImageContext();
+  // 返回新的改变大小后的图片
+  return scaledImage;
+}
+
 - (BOOL)tapWithPoint:(CGPoint)tapPoint error:(NSError * _Nullable *)error {
   XCUIElement *element = [FBSession activeSession].activeApplication;
-  if (nil == element) {
+  if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"13.0")) {
+    if (nil == element) {
+      XCUICoordinate *tapCoordinate = [self.class gestureCoordinateWithCoordinate:tapPoint application:[FBSession activeSession].activeApplication shouldApplyOrientationWorkaround:isSDKVersionLessThan(@"11.0")];
+      [tapCoordinate tap];
+      return YES;
+    } else {
+      NSError *error1;
+      if (![element fb_tapCoordinate:tapPoint error:&error1]) {
+        if (error) {
+          *error = error1;
+        }
+        NSLog(@"%@", error1);
+        return NO;
+      }
+    }
+    return YES;
+  }
+  else {
+    
+    // iOS 10 以上方法点击无效
     XCUICoordinate *tapCoordinate = [self.class gestureCoordinateWithCoordinate:tapPoint application:[FBSession activeSession].activeApplication shouldApplyOrientationWorkaround:isSDKVersionLessThan(@"11.0")];
     [tapCoordinate tap];
-  } else {
-    NSError *error1;
-    if (![element fb_tapCoordinate:tapPoint error:&error1]) {
-      if (error) {
-        *error = error1;
-      }
-      NSLog(@"%@", error1);
-      return NO;
-    }
+    
+    // 以下方法 在键盘弹出时, 点击的坐标混乱
+    //  XCUIElement *element = [FBSession activeSession].activeApplication;
+    //  if (!element) {
+    //    element = [XCUIApplication new];
+    //  }
+    //  XCUICoordinate *normalized = [element coordinateWithNormalizedOffset:CGVectorMake(0, 0)];
+    //  [[normalized coordinateWithOffset:CGVectorMake(tapPoint.x, tapPoint.y)] tap];
+    
+    return YES;
   }
+}
+
+// iOS 10
+- (BOOL)_tapWithPoint:(CGPoint)tapPoint error:(NSError * _Nullable *)error {
+
+  XCUICoordinate *tapCoordinate = [self.class gestureCoordinateWithCoordinate:tapPoint application:[FBSession activeSession].activeApplication shouldApplyOrientationWorkaround:isSDKVersionLessThan(@"11.0")];
+  [tapCoordinate tap];
   return YES;
 }
+
 
 - (BOOL)tapHoldWithPoint:(CGPoint)tapPoint duration:(NSTimeInterval)duration error:(NSError * _Nullable *)error {
    XCUICoordinate *pressCoordinate = [self.class gestureCoordinateWithCoordinate:tapPoint application:[FBSession activeSession].activeApplication shouldApplyOrientationWorkaround:isSDKVersionLessThan(@"11.0")];
@@ -130,6 +212,14 @@ static NSString *screenshotDirectory() {
   return YES;
 }
 
+- (BOOL)tapWithClassName:(NSString *)className name:(NSString *)name label:(NSString *)label error:(NSError * _Nullable __autoreleasing *)error {
+  NSArray<XCUIElement *> *elements = [self findElementsWithClassName:className name:name label:label];
+  if (elements.count == 0) {
+    return NO;
+  }
+  [elements.firstObject tap];
+  return YES;
+}
 
 - (BOOL)clickWithPoint:(CGPoint)tapPoint error:(NSError * _Nullable *)error {
   XCUIElement *element = [FBSession activeSession].activeApplication;
@@ -364,6 +454,9 @@ static NSString *screenshotDirectory() {
 /// @param name 控件的名称，比如控件的text
 /// @param label 比如button 的icon名称 ， 比如完美世界游戏左侧悬浮窗的名称为common toolbar icon normal
 - (NSArray<XCUIElement *> * _Nullable)findElementsWithClassName:(NSString *_Nullable)className name:(NSString *_Nullable)name label:(NSString *_Nullable)label {
+  if (className.length == 0 && name.length == 0 && label.length == 0) {
+    return nil;
+  }
   RTElementSelector *selector = [[RTElementSelector alloc] init];
   selector.className = className;
   selector.name = name;
@@ -423,46 +516,66 @@ static NSString *screenshotDirectory() {
   return elements;
 }
 
+  /// 给控件添加文本
+- (BOOL)setElementText:(NSString *)text forClassName:(NSString *)className name:(NSString *_Nullable)name error:(NSError * _Nullable __autoreleasing *)error {
+  return [self setElementText:text forClassName:className name:name error:error];
+}
+  
 /// 给控件添加文本
-- (BOOL)setElementText:(NSString *)text forClassName:(NSString *)className name:(NSString *_Nullable)name error:(NSError * _Nullable __autoreleasing *)error
+- (BOOL)setElementText:(NSString *)text forClassName:(NSString *)className name:(NSString *_Nullable)name tryCount:(NSInteger)tryCount error:(NSError * _Nullable __autoreleasing *)error
 {
-  XCUIElement *element = [self findElementsWithClassName:className name:name label:nil].firstObject;
-  id value = text;
-  if (!value || !element) {
-    if (error) {
-      *error = [NSError errorWithDomain:NSURLErrorDomain code:-1 userInfo:@{@"info": @"Neither 'text' nor 'element' parameter is provided"}];
-    }
-    return NO;
-  }
-  NSString *textToType = [value isKindOfClass:NSArray.class]
-    ? [value componentsJoinedByString:@""]
-    : value;
-#if !TARGET_OS_TV
-  if (element.elementType == XCUIElementTypePickerWheel) {
-    [element adjustToPickerWheelValue:textToType?:@""];
-    return YES;
-  }
-#endif
-  if (element.elementType == XCUIElementTypeSlider) {
-    CGFloat sliderValue = textToType.floatValue;
-    if (sliderValue < 0.0 || sliderValue > 1.0 ) {
+  
+  BOOL (^ setElementTextBlock)(NSString *, NSString *, NSString *, NSError **) = ^(NSString *_text, NSString *_Nullable _className, NSString *_Nullable _name, NSError * _Nullable __autoreleasing *_error) {
+    XCUIElement *element = [self findElementsWithClassName:_className name:_name label:nil].firstObject;
+    id value = _text;
+    if (!value || !element) {
       if (error) {
-        *error = [NSError errorWithDomain:NSURLErrorDomain code:-1 userInfo:@{@"info": @"Value of slider should be in 0..1 range"}];
+        *error = [NSError errorWithDomain:NSURLErrorDomain code:-1 userInfo:@{@"info": @"Neither 'text' nor 'element' parameter is provided"}];
       }
       return NO;
     }
-    [element adjustToNormalizedSliderPosition:sliderValue];
-    return YES;
-  }
-  NSUInteger frequency = [FBConfiguration maxTypingFrequency];
-  if (![element fb_typeText:textToType?:@"" frequency:frequency error:error]) {
-    return NO;
-  }
-  return YES;
-}
-
+    NSString *textToType = [value isKindOfClass:NSArray.class]
+    ? [value componentsJoinedByString:@""]
+    : value;
 #if !TARGET_OS_TV
-- (BOOL)setPasteboard:(NSString *)content contentType:(RTPasteBoardContentType)contentType error:(NSError * _Nullable __autoreleasing * _Nullable)error
+    if (element.elementType == XCUIElementTypePickerWheel) {
+      [element adjustToPickerWheelValue:textToType?:@""];
+      return YES;
+    }
+#endif
+    if (element.elementType == XCUIElementTypeSlider) {
+      CGFloat sliderValue = textToType.floatValue;
+      if (sliderValue < 0.0 || sliderValue > 1.0 ) {
+        if (error) {
+          *error = [NSError errorWithDomain:NSURLErrorDomain code:-1 userInfo:@{@"info": @"Value of slider should be in 0..1 range"}];
+        }
+        return NO;
+      }
+      [element adjustToNormalizedSliderPosition:sliderValue];
+      return YES;
+    }
+    NSUInteger frequency = [FBConfiguration maxTypingFrequency];
+    if (![element fb_typeText:textToType?:@"" frequency:frequency error:error]) {
+      return NO;
+    }
+    return YES;
+  };
+  
+  tryCount = MAX(tryCount, 1);
+  BOOL isSuccess = NO;
+  while (tryCount > 0) {
+    isSuccess = setElementTextBlock(text, className, name, error);
+    sleep(2.0);
+    tryCount--;
+    if (isSuccess) {
+      tryCount = 0;
+    }
+  }
+  return isSuccess;
+}
+  
+#if !TARGET_OS_TV
+  - (BOOL)setPasteboard:(NSString *)content contentType:(RTPasteBoardContentType)contentType error:(NSError * _Nullable __autoreleasing * _Nullable)error
 {
   NSString *contentTypeStr = nil;
   NSData *contentData = nil;
@@ -493,8 +606,6 @@ static NSString *screenshotDirectory() {
   return YES;
 }
 
-
-
 - (NSString *_Nullable)getPasteboardWithContentType:(RTPasteBoardContentType)contentType error:(NSError * _Nullable __autoreleasing *)error
 {
   NSString *contentTypeStr = nil;
@@ -513,9 +624,14 @@ static NSString *screenshotDirectory() {
   }
   return [result base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
 }
-
+  
 #endif
-
+  
+- (BOOL)setKeyboardTypeText:(NSString *)text error:(NSError *__autoreleasing  _Nullable *)error {
+  NSUInteger frequency = [FBConfiguration maxTypingFrequency];
+  return [FBKeyboard typeText:text frequency:frequency error:error];
+}
+  
 #pragma mark - Helpers
 
 - (CGSize)getWindowSize
