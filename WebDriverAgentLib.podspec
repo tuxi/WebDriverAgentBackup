@@ -56,7 +56,7 @@ Pod::Spec.new do |spec|
   #spec.exclude_files = "Classes/Exclude"
 
   #spec.public_header_files = "WebDriverAgentLib/**/*.h",
-  spec.public_header_files = "WebDriverAgentLib/WebDriverAgentLib.h", "WebDriverAgentLib/Custom/*.h"
+  spec.public_header_files = "WebDriverAgentLib/Public/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
