@@ -136,3 +136,22 @@ pip3 install --pre facebook-wda
  'class chain' 
  **/XCUIElementTypeStaticText[`name == '请输入手机号码'`]
  **/XCUIElementTypeStaticText[`name == '请输入手机号码'`]
+
+
+### 运行
+准备好iOS 设备, 支持iPhone5和iPhone6系列设备
+
+- 修改iOS设备的设备名称, 设备-通用-关于本机
+将其修改为机器人名称
+
+-  设置网络代理
+设置iOS 设备和Mac 的网络, 在同一个局域网下
+  * Mac 端启动青花瓷抓包工具
+  * iOS 设备 配置WIFI的代理为Mac 的局域网内ip地址, 并配置端口为抓包工具的HTTP Proxy 端口.
+  
+- 运行脚本 
+打开终端
+```
+cd WebDriverAgent
+./run.sh
+```

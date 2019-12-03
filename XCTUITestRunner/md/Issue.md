@@ -54,7 +54,8 @@ WebDriverAgentRunner-Runner.app (341) encountered an error (Early unexpected exi
 ```
 解决方法:
 证书问题,  虽然看似证书签名没有问题, 但实际上执行Test时就是Falure, 我们需要在各个target的build settings 中将bundle identifier 修改为自己的.
-卸载iOS 设备的WebDriverAgent , Xcode重新执行Test
+卸载iOS 设备的WebDriverAgent , Xcode重新执行Test!
+如果还不行就重启电脑!
 
 
 ### Test Failure
@@ -94,3 +95,20 @@ bjc[673]: Class GCDAsyncSocket is implemented in both /private/var/containers/Bu
   解决方法：
  将WebDriverAgentRunner的Build Phases 下面的framework 取消勾选Code sign on copy。
 [参考资料](https://objc.com/article/76)
+
+
+###  dyld: Library not loaded: /usr/local/opt/usbmuxd/lib/libusbmuxd.4.dylib
+报错内容
+```
+your-desired-host-name:lib bean$ idevice_id -l | head -n1
+dyld: Library not loaded: /usr/local/opt/usbmuxd/lib/libusbmuxd.4.dylib
+  Referenced from: /usr/local/bin/idevice_id
+  Reason: image not found
+```
+解决方法:
+本问题为缺少`libusbmuxd.4.dylib`动态库导致
+进入到`/usr/local/opt/usbmuxd/lib/`目录下, 发现有`libusbmuxd.6.dylib`, 在此目录下将`libusbmuxd.6.dylib`建立为`libusbmuxd.4.dylib`的软连接, 问题解决.
+```
+cd /usr/local/opt/usbmuxd/lib/
+sudo ln -s /usr/local/opt/usbmuxd/lib/libusbmuxd.6.dylib /usr/local/opt/usbmuxd/lib/libusbmuxd.4.dylib
+```
