@@ -518,7 +518,7 @@ static NSString *screenshotDirectory() {
 
   /// 给控件添加文本
 - (BOOL)setElementText:(NSString *)text forClassName:(NSString *)className name:(NSString *_Nullable)name error:(NSError * _Nullable __autoreleasing *)error {
-  return [self setElementText:text forClassName:className name:name error:error];
+  return [self setElementText:text forClassName:className name:name tryCount:1 error:error];
 }
   
 /// 给控件添加文本

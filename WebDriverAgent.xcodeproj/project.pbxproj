@@ -225,14 +225,22 @@
 		07A0A5622396439600560965 /* UIKeyboardImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A0A4882396439500560965 /* UIKeyboardImpl.h */; };
 		07A0A5632396439600560965 /* AXSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A0A48A2396439500560965 /* AXSettings.h */; };
 		07A0A5642396439600560965 /* AXSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A0A48A2396439500560965 /* AXSettings.h */; };
+		07A0A59E239687C600560965 /* RTCommander.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E7A8D6237E4E54004DEED9 /* RTCommander.m */; };
+		07A0A5A0239687D000560965 /* RTElementSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 07C648A8237BFD9200EE9A27 /* RTElementSelector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07A0A5A1239687D100560965 /* RTElementSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 07C648A8237BFD9200EE9A27 /* RTElementSelector.h */; };
+		07A0A5A2239687DA00560965 /* RTCommander.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E7A8D5237E4E54004DEED9 /* RTCommander.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07A0A5A3239687DA00560965 /* RTCommander.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E7A8D5237E4E54004DEED9 /* RTCommander.h */; };
+		07A0A5A4239687E000560965 /* RTCommander.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E7A8D6237E4E54004DEED9 /* RTCommander.m */; };
+		07A0A5A5239687E200560965 /* RTCommanderProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = D2A62283237FEF0E00792CC2 /* RTCommanderProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07A0A5A6239687E200560965 /* RTCommanderProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = D2A62283237FEF0E00792CC2 /* RTCommanderProtocol.h */; };
+		07A0A5A7239687FB00560965 /* RTElementSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C648A9237BFD9200EE9A27 /* RTElementSelector.m */; };
+		07A0A5A8239687FC00560965 /* RTElementSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C648A9237BFD9200EE9A27 /* RTElementSelector.m */; };
 		07C6489D237AD93800EE9A27 /* FBXCodeCompatibility.h in Headers */ = {isa = PBXBuildFile; fileRef = EE5A24401F136C8D0078B1D9 /* FBXCodeCompatibility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07C64D31237D3CE100EE9A27 /* AutomationScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 07394262237AD3BE0033B45E /* AutomationScript.m */; };
-		07E7A8D0237E441D004DEED9 /* RTElementSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C648A9237BFD9200EE9A27 /* RTElementSelector.m */; };
 		07E7A8D1237E4422004DEED9 /* RTAppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C648A1237BAB7D00EE9A27 /* RTAppUtils.m */; };
 		07E7A8D2237E4948004DEED9 /* YYCache.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = 7155B40C224D5A5F0042A993 /* YYCache.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07E7A8D3237E4948004DEED9 /* RoutingHTTPServer.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = AD42DD2B1CF1238500806E5D /* RoutingHTTPServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07E7A8D4237E4948004DEED9 /* CocoaAsyncSocket.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = 710181F7211DF584002FD3A8 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		07E7A8D7237E4E54004DEED9 /* RTCommander.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E7A8D6237E4E54004DEED9 /* RTCommander.m */; };
 		13815F6F2328D20400CDAB61 /* FBActiveAppDetectionPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 13815F6D2328D20400CDAB61 /* FBActiveAppDetectionPoint.h */; };
 		13815F702328D20400CDAB61 /* FBActiveAppDetectionPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 13815F6D2328D20400CDAB61 /* FBActiveAppDetectionPoint.h */; };
 		13815F712328D20400CDAB61 /* FBActiveAppDetectionPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 13815F6E2328D20400CDAB61 /* FBActiveAppDetectionPoint.m */; };
@@ -1079,7 +1087,7 @@
 		AD42DD2A1CF121E600806E5D /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		AD42DD2B1CF1238500806E5D /* RoutingHTTPServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RoutingHTTPServer.framework; path = Carthage/Build/iOS/RoutingHTTPServer.framework; sourceTree = "<group>"; };
 		AD6C26921CF2379700F8B5FF /* FBAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBAlert.h; path = WebDriverAgentLib/FBAlert.h; sourceTree = SOURCE_ROOT; };
-		AD6C26931CF2379700F8B5FF /* FBAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = FBAlert.m; path = WebDriverAgentLib/FBAlert.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AD6C26931CF2379700F8B5FF /* FBAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = FBAlert.m; path = WebDriverAgentLib/FBAlert.m; sourceTree = SOURCE_ROOT; };
 		AD6C26961CF2481700F8B5FF /* XCUIDevice+FBHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCUIDevice+FBHelpers.h"; sourceTree = "<group>"; };
 		AD6C26971CF2481700F8B5FF /* XCUIDevice+FBHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCUIDevice+FBHelpers.m"; sourceTree = "<group>"; };
 		AD6C269A1CF2494200F8B5FF /* XCUIApplication+FBHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCUIApplication+FBHelpers.h"; sourceTree = "<group>"; };
@@ -1518,6 +1526,19 @@
 			);
 			path = AccessibilityUtilities;
 			sourceTree = "<group>";
+		};
+		07A0A565239646DA00560965 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				07C648A8237BFD9200EE9A27 /* RTElementSelector.h */,
+				07C648A9237BFD9200EE9A27 /* RTElementSelector.m */,
+				07E7A8D5237E4E54004DEED9 /* RTCommander.h */,
+				07E7A8D6237E4E54004DEED9 /* RTCommander.m */,
+				D2A62283237FEF0E00792CC2 /* RTCommanderProtocol.h */,
+			);
+			name = Custom;
+			path = WebDriverAgentLib/Custom;
+			sourceTree = SOURCE_ROOT;
 		};
 		07C64D34237D4F5600EE9A27 /* md */ = {
 			isa = PBXGroup;
@@ -1994,6 +2015,7 @@
 		EEC288F81BF0ED2500B4DC79 /* WebDriverAgentLib */ = {
 			isa = PBXGroup;
 			children = (
+				07A0A565239646DA00560965 /* Custom */,
 				07A0A4182396439500560965 /* PrivateHeaders */,
 				EE9AB73E1CAEDF0C008C271F /* Categories */,
 				EE9AB74F1CAEDF0C008C271F /* Commands */,
@@ -2035,12 +2057,7 @@
 				EE9AB7FD1CAEE048008C271F /* UITestingUITests.m */,
 				07C648A0237BAB7D00EE9A27 /* RTAppUtils.h */,
 				07C648A1237BAB7D00EE9A27 /* RTAppUtils.m */,
-				07C648A8237BFD9200EE9A27 /* RTElementSelector.h */,
-				07C648A9237BFD9200EE9A27 /* RTElementSelector.m */,
 				07C648B6237C4F8200EE9A27 /* run.sh */,
-				07E7A8D5237E4E54004DEED9 /* RTCommander.h */,
-				07E7A8D6237E4E54004DEED9 /* RTCommander.m */,
-				D2A62283237FEF0E00792CC2 /* RTCommanderProtocol.h */,
 			);
 			name = WebDriverAgentRunner;
 			path = XCTUITestRunner;
@@ -2075,8 +2092,10 @@
 				641EE63B2240C5CA00173FCB /* FBAlertsMonitor.h in Headers */,
 				641EE63D2240C5CA00173FCB /* FBSession.h in Headers */,
 				641EE63F2240C5CA00173FCB /* FBTouchActionCommands.h in Headers */,
+				07A0A5A1239687D100560965 /* RTElementSelector.h in Headers */,
 				641EE6402240C5CA00173FCB /* FBTouchIDCommands.h in Headers */,
 				641EE6422240C5CA00173FCB /* FBCustomCommands.h in Headers */,
+				07A0A5A6239687E200560965 /* RTCommanderProtocol.h in Headers */,
 				07A0A4A82396439500560965 /* XCUIElement.h in Headers */,
 				07A0A4DA2396439500560965 /* _XCKVOExpectationImplementation.h in Headers */,
 				07A0A4942396439500560965 /* XCTestObservation-Protocol.h in Headers */,
@@ -2167,6 +2186,7 @@
 				07A0A4D42396439500560965 /* XCTWaiterManager.h in Headers */,
 				07A0A4B22396439500560965 /* XCTestManager_IDEInterface-Protocol.h in Headers */,
 				641EE6A42240C5CA00173FCB /* FBCommandHandler.h in Headers */,
+				07A0A5A3239687DA00560965 /* RTCommander.h in Headers */,
 				641EE6A52240C5CA00173FCB /* FBSessionCommands.h in Headers */,
 				07A0A48C2396439500560965 /* XCTWaiter.h in Headers */,
 				07A0A51A2396439500560965 /* _XCTestImplementation.h in Headers */,
@@ -2303,10 +2323,12 @@
 				07A0A5392396439600560965 /* _XCInternalTestRun.h in Headers */,
 				07A0A4BB2396439500560965 /* XCElementSnapshot.h in Headers */,
 				EE158AC61CBD456F00A3E3F0 /* FBScreenshotCommands.h in Headers */,
+				07A0A5A0239687D000560965 /* RTElementSelector.h in Headers */,
 				EE0D1F611EBCDCF7006A3123 /* NSString+FBVisualLength.h in Headers */,
 				EE35AD7B1E3B80C000A02D78 /* FBXCTestDaemonsProxy.h in Headers */,
 				EEC9EED620064FAA00BC0D5B /* XCUICoordinate+FBFix.h in Headers */,
 				07A0A4C12396439500560965 /* XCKeyboardLayout.h in Headers */,
+				07A0A5A2239687DA00560965 /* RTCommander.h in Headers */,
 				EE158AB01CBD456F00A3E3F0 /* XCUIElement+FBIsVisible.h in Headers */,
 				31EC77FC224F7D0600380FCD /* XCUIApplicationProcessQuiescence.h in Headers */,
 				07A0A5252396439500560965 /* XCUIElementHitPointCoordinate.h in Headers */,
@@ -2314,6 +2336,7 @@
 				07A0A4D12396439500560965 /* XCActivityRecord.h in Headers */,
 				EE158AB41CBD456F00A3E3F0 /* XCUIElement+FBTap.h in Headers */,
 				07A0A5192396439500560965 /* _XCTestImplementation.h in Headers */,
+				07A0A5A5239687E200560965 /* RTCommanderProtocol.h in Headers */,
 				07A0A54D2396439600560965 /* UIPinchGestureRecognizer-RecordingAdditions.h in Headers */,
 				EE158ADC1CBD456F00A3E3F0 /* FBResponsePayload.h in Headers */,
 				07A0A4D32396439500560965 /* XCTWaiterManager.h in Headers */,
@@ -2865,12 +2888,14 @@
 				641EE5F62240C5CA00173FCB /* FBRouteRequest.m in Sources */,
 				641EE5F72240C5CA00173FCB /* FBResponseJSONPayload.m in Sources */,
 				641EE5F82240C5CA00173FCB /* FBXCTestCaseImplementationFailureHoldingProxy.m in Sources */,
+				07A0A5A8239687FC00560965 /* RTElementSelector.m in Sources */,
 				641EE5F92240C5CA00173FCB /* FBMjpegServer.m in Sources */,
 				641EE5FA2240C5CA00173FCB /* XCUIDevice+FBHealthCheck.m in Sources */,
 				641EE5FB2240C5CA00173FCB /* FBSpringboardApplication.m in Sources */,
 				641EE5FD2240C5CA00173FCB /* FBBaseActionsSynthesizer.m in Sources */,
 				641EE5FE2240C5CA00173FCB /* XCUIElement+FBWebDriverAttributes.m in Sources */,
 				641EE5FF2240C5CA00173FCB /* XCUIElement+FBForceTouch.m in Sources */,
+				07A0A5A4239687E000560965 /* RTCommander.m in Sources */,
 				641EE6002240C5CA00173FCB /* FBTouchActionCommands.m in Sources */,
 				641EE6012240C5CA00173FCB /* FBImageIOScaler.m in Sources */,
 				641EE6022240C5CA00173FCB /* FBTouchIDCommands.m in Sources */,
@@ -2967,12 +2992,14 @@
 				EE158AE21CBD456F00A3E3F0 /* FBRouteRequest.m in Sources */,
 				EE158ADB1CBD456F00A3E3F0 /* FBResponseJSONPayload.m in Sources */,
 				EE7E271F1D06C69F001BEC7B /* FBXCTestCaseImplementationFailureHoldingProxy.m in Sources */,
+				07A0A5A7239687FB00560965 /* RTElementSelector.m in Sources */,
 				7155D704211DCEF400166C20 /* FBMjpegServer.m in Sources */,
 				EEDFE1221D9C06F800E6FFE5 /* XCUIDevice+FBHealthCheck.m in Sources */,
 				EE158AF81CBD456F00A3E3F0 /* FBSpringboardApplication.m in Sources */,
 				7140974E1FAE20EE008FB2C5 /* FBBaseActionsSynthesizer.m in Sources */,
 				EEE3764A1D59FAE900ED88DD /* XCUIElement+FBWebDriverAttributes.m in Sources */,
 				EE8DDD7E20C5733C004D4925 /* XCUIElement+FBForceTouch.m in Sources */,
+				07A0A59E239687C600560965 /* RTCommander.m in Sources */,
 				71241D7C1FAE3D2500B9559F /* FBTouchActionCommands.m in Sources */,
 				63CCF91321ECE4C700E94ABD /* FBImageIOScaler.m in Sources */,
 				EE158ACB1CBD456F00A3E3F0 /* FBTouchIDCommands.m in Sources */,
@@ -3122,10 +3149,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07E7A8D0237E441D004DEED9 /* RTElementSelector.m in Sources */,
 				EE9AB8011CAEE048008C271F /* UITestingUITests.m in Sources */,
 				07C64D31237D3CE100EE9A27 /* AutomationScript.m in Sources */,
-				07E7A8D7237E4E54004DEED9 /* RTCommander.m in Sources */,
 				07E7A8D1237E4422004DEED9 /* RTAppUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
