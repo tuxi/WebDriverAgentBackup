@@ -18,15 +18,8 @@ Pod::Spec.new do |spec|
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
-  # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Licensing your code is important. See https://choosealicense.com for more info.
-  #  CocoaPods will detect a license file if there is a named LICENSE*
-  #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
-  #
-
-  #spec.license      = "MIT (example)"
-  # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  # 框架遵守的开源协议
+  spec.license      = 'MIT'
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -40,24 +33,13 @@ Pod::Spec.new do |spec|
   #
 
   spec.author             = { "xiaoyuan" => "seyooe@gmail.com" }
-  # Or just: spec.author    = "xiaoyuan"
-  # spec.authors            = { "xiaoyuan" => "seyooe@gmail.com" }
-  # spec.social_media_url   = "https://twitter.com/seyooe"
-
-  # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  If this Pod runs only on iOS or OS X, then specify the platform and
-  #  the deployment target. You can optionally include the target after the platform.
-  #
-
-  # spec.platform     = :ios
-  # spec.platform     = :ios, "5.0"
+  spec.social_media_url   = "https://twitter.com/seyooe"
 
   #  When using multiple platforms
-  # spec.ios.deployment_target = "5.0"
-  # spec.osx.deployment_target = "10.7"
-  # spec.watchos.deployment_target = "2.0"
-  # spec.tvos.deployment_target = "9.0"
+  spec.ios.deployment_target = "9.0"
+  spec.osx.deployment_target = "10.7"
+  spec.watchos.deployment_target = "2.0"
+  spec.tvos.deployment_target = "9.0"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -66,14 +48,15 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "/Users/bean/.cocoapods/repos/local/repos.local.git/TestKit/WebDriverAgent/WebDriverAgentLib", :tag => "#{spec.version}" }
+  spec.source       = { :git => "WebDriverAgentLib", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.source_files  = "WebDriverAgentLib", "WebDriverAgentLib/**/*.{h,m}"
-  spec.exclude_files = "Classes/Exclude"
+  #spec.exclude_files = "Classes/Exclude"
 
-  spec.public_header_files = "WebDriverAgentLib/**/*.h"
+  #spec.public_header_files = "WebDriverAgentLib/**/*.h",
+  spec.public_header_files = "WebDriverAgentLib/WebDriverAgentLib.h", "WebDriverAgentLib/Custom/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -85,7 +68,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.resource  = "icon.png"
-  # spec.resources = "Resources/*.png"
+  #spec.resources = "Resources/*.png"
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
@@ -96,16 +79,22 @@ Pod::Spec.new do |spec|
   #  the lib prefix of their name.
   #
 
-  # spec.framework  = "SomeFramework"
-  # spec.frameworks = "SomeFramework", "AnotherFramework"
-
-  spec.library   = "WebDriverAgentLib"
-  # spec.libraries = "iconv", "xml2"
+  # 依赖的frameworks
+  spec.frameworks       = ["XCTest", "XCTAutomationSupport"]
+  # 依赖的libraries
+  spec.libraries        = [ "Accessibility", "xml2" ]
+  # 引用xml2库,但系统会找不到这个库的头文件，需在spec.xcconfig配合使用(这里省略lib)
+  # 在pod target项的Header Search Path中配置:${SDK_DIR}/usr/include/libxml2.2
+  spec.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2', 'FRAMEWORK_SEARCH_PATHS' => '$(PLATFORM_DIR)/Developer/Library/PrivateFrameworks', 'ENABLE_BITCODE' => 'NO' } 
+  # 添加PrivateFrameworks后, 不能包含ENABLE_BITCODE
 
 
   spec.requires_arc = true
 
-  spec.xcconfig = { "HEADER_SEARCH_PATHS" => "/Users/bean/.cocoapods/repos/local/repos.local.git/TestKit/WebDriverAgent/WebDriverAgentLib" }
-  # spec.dependency "JSONKit", "~> 1.4"
+  # 依赖的第三方库
+  spec.dependency "YYCache"
+  spec.dependency "CocoaAsyncSocket"
+  spec.dependency "RoutingHTTPServer"
+  
 
 end
