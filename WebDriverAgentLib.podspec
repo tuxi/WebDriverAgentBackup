@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
 
   spec.description  = "FaceBook WebDriverAgent Backup in cocoapods."
 
-  spec.homepage     = "http://github.com/tuxi/WebDriverAgentBackup"
+  spec.homepage     = "https://github.com/tuxi/WebDriverAgentBackup"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -25,10 +25,7 @@ Pod::Spec.new do |spec|
   spec.social_media_url   = "https://twitter.com/seyooe"
 
   #  When using multiple platforms
-  spec.ios.deployment_target = "9.0"
-  spec.osx.deployment_target = "10.7"
-  spec.watchos.deployment_target = "2.0"
-  spec.tvos.deployment_target = "9.0"
+  spec.ios.deployment_target = "4.0"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -40,7 +37,7 @@ Pod::Spec.new do |spec|
   # 本地地址
   #spec.source       = { :git => "WebDriverAgentLib", :tag => "#{spec.version}" }
   # 远程地址
-  spec.source       = { :git => "http://github.com/tuxi/WebDriverAgentBackup.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/tuxi/WebDriverAgentBackup.git", :tag => "#{spec.version}" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.source_files  = "WebDriverAgentLib", "WebDriverAgentLib/**/*.{h,m}"
@@ -88,9 +85,9 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
 
   # 依赖的第三方库
-  spec.dependency "YYCache"
   spec.dependency "CocoaAsyncSocket"
   spec.dependency "RoutingHTTPServer"
+  spec.dependency "YYCache"
   
 
 end
