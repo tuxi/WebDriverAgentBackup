@@ -9,28 +9,17 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "WebDriverAgentLib"
-  spec.version      = "0.0.1"
+  spec.version      = "0.9"
   spec.summary      = "A short description of WebDriverAgentLib."
 
-  spec.description  = "WebDriverAgentLib 测试框架"
+  spec.description  = "FaceBook WebDriverAgent Backup in cocoapods."
 
   spec.homepage     = "http://github.com/tuxi/WebDriverAgentBackup"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
   # 框架遵守的开源协议
-  spec.license      = 'MIT'
-
-
-  # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Specify the authors of the library, with email addresses. Email addresses
-  #  of the authors are extracted from the SCM log. E.g. $ git log. CocoaPods also
-  #  accepts just a name if you'd rather not provide an email address.
-  #
-  #  Specify a social_media_url where others can refer to, for example a twitter
-  #  profile URL.
-  #
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
 
   spec.author             = { "xiaoyuan" => "seyooe@gmail.com" }
   spec.social_media_url   = "https://twitter.com/seyooe"
@@ -48,8 +37,10 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "WebDriverAgentLib", :tag => "#{spec.version}" }
-
+  # 本地地址
+  #spec.source       = { :git => "WebDriverAgentLib", :tag => "#{spec.version}" }
+  # 远程地址
+  spec.source       = { :git => "http://github.com/tuxi/WebDriverAgentBackup.git", :tag => "#{spec.version}" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.source_files  = "WebDriverAgentLib", "WebDriverAgentLib/**/*.{h,m}"
