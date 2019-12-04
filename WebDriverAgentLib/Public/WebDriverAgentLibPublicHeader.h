@@ -11,6 +11,10 @@
 
 #import "RTCommander.h"
 #import "RTCommanderProtocol.h"
-
+#import "FBWebServer.h"
+#import "FBConfiguration.h"
+#import "FBFailureProofTestCase.h"
+#import "XCTestCase.h"
+#import "FBDebugLogDelegateDecorator.h"
 
 #endif /* WebDriverAgentLibPublicHeader_h */

@@ -6,7 +6,8 @@
 
 #import <XCTest/XCTest.h>
 
-#import <WebDriverAgentLib/CDStructures.h>
+//#import <WebDriverAgentLib/CDStructures.h>
+#import "CDStructures.h"
 
 @class NSInvocation, XCTestCaseRun, XCTestContext, _XCTestCaseImplementation;
 

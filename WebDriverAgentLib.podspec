@@ -56,7 +56,7 @@ Pod::Spec.new do |spec|
   #spec.exclude_files = "Classes/Exclude"
 
   #spec.public_header_files = "WebDriverAgentLib/**/*.h",
-  spec.public_header_files = "WebDriverAgentLib/Public/*.h", "WebDriverAgentLib/Utilities/*.h"
+  spec.public_header_files = "WebDriverAgentLib/Public/*.h", "WebDriverAgentLib/Utilities/*.h", "WebDriverAgentLib/Routing/FBWebServer.h", "WebDriverAgentLib/Utilities/FBConfiguration.h", "WebDriverAgentLib/Utilities/FBFailureProofTestCase.h", "WebDriverAgentLib/PrivateHeaders/AccessibilityUtilities/AXSettings.h", "WebDriverAgentLib/PrivateHeaders/UIKitCore/UIKeyboardImpl.h", "WebDriverAgentLib/PrivateHeaders/TextInput/TIPreferencesController.h", "WebDriverAgentLib/PrivateHeaders/XCTest/XCTestCase.h", "WebDriverAgentLib/PrivateHeaders/XCTest/CDStructures.h", "WebDriverAgentLib/Utilities/FBDebugLogDelegateDecorator.h", "WebDriverAgentLib/PrivateHeaders/XCTest/XCDebugLogDelegate-Protocol.h"
   
   
 
