@@ -55,9 +55,13 @@ Pod::Spec.new do |spec|
   spec.source_files  = "WebDriverAgentLib", "WebDriverAgentLib/**/*.{h,m}"
   #spec.exclude_files = "Classes/Exclude"
 
+  # 公开的头文件
   #spec.public_header_files = "WebDriverAgentLib/**/*.h",
-  spec.public_header_files = "WebDriverAgentLib/Public/*.h", "WebDriverAgentLib/Utilities/*.h", "WebDriverAgentLib/Routing/FBWebServer.h", "WebDriverAgentLib/Utilities/FBConfiguration.h", "WebDriverAgentLib/Utilities/FBFailureProofTestCase.h", "WebDriverAgentLib/PrivateHeaders/AccessibilityUtilities/AXSettings.h", "WebDriverAgentLib/PrivateHeaders/UIKitCore/UIKeyboardImpl.h", "WebDriverAgentLib/PrivateHeaders/TextInput/TIPreferencesController.h", "WebDriverAgentLib/PrivateHeaders/XCTest/XCTestCase.h", "WebDriverAgentLib/PrivateHeaders/XCTest/CDStructures.h", "WebDriverAgentLib/Utilities/FBDebugLogDelegateDecorator.h", "WebDriverAgentLib/PrivateHeaders/XCTest/XCDebugLogDelegate-Protocol.h"
+  spec.public_header_files = "WebDriverAgentLib/Public/*.h",  "WebDriverAgentLib/Routing/FBWebServer.h", "WebDriverAgentLib/Utilities/FBConfiguration.h", "WebDriverAgentLib/Utilities/FBFailureProofTestCase.h", "WebDriverAgentLib/PrivateHeaders/AccessibilityUtilities/AXSettings.h", "WebDriverAgentLib/PrivateHeaders/UIKitCore/UIKeyboardImpl.h", "WebDriverAgentLib/PrivateHeaders/TextInput/TIPreferencesController.h", "WebDriverAgentLib/PrivateHeaders/XCTest/XCTestCase.h", "WebDriverAgentLib/PrivateHeaders/XCTest/CDStructures.h", "WebDriverAgentLib/Utilities/FBDebugLogDelegateDecorator.h", "WebDriverAgentLib/PrivateHeaders/XCTest/XCDebugLogDelegate-Protocol.h"
   
+  # 私有的头文件
+  #spec.private_header_files = "FBBaseActionsSynthesizer.h"
+
   
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -71,7 +75,6 @@ Pod::Spec.new do |spec|
   # spec.resource  = "icon.png"
   #spec.resources = "Resources/*.png"
 
-  # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -87,7 +90,8 @@ Pod::Spec.new do |spec|
   # 引用xml2库,但系统会找不到这个库的头文件，需在spec.xcconfig配合使用(这里省略lib)
   # 在pod target项的Header Search Path中配置:${SDK_DIR}/usr/include/libxml2.2
   spec.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2', 'FRAMEWORK_SEARCH_PATHS' => '$(PLATFORM_DIR)/Developer/Library/PrivateFrameworks', 'ENABLE_BITCODE' => 'NO' } 
-  # 添加PrivateFrameworks后, 不能包含ENABLE_BITCODE
+  # 添加系统PrivateFrameworks后, 不能包含ENABLE_BITCODE
+
 
 
   spec.requires_arc = true

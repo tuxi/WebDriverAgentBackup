@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import WebDriverAgentLib
 
 class SupportCocoaPodsExampleUITests_Swift: XCTestCase {
 
@@ -30,6 +31,7 @@ class SupportCocoaPodsExampleUITests_Swift: XCTestCase {
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+
     }
 
     func testLaunchPerformance() {
