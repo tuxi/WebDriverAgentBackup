@@ -15,7 +15,7 @@ PODS:
   - YYCache (1.0.4)
 
 DEPENDENCIES:
-  - WebDriverAgentLib (from `/Users/bean/.cocoapods/repos/local/repos.local.git/TestKit/WebDriverAgent`)
+  - WebDriverAgentLib (from `../../`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -27,7 +27,7 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   WebDriverAgentLib:
-    :path: "/Users/bean/.cocoapods/repos/local/repos.local.git/TestKit/WebDriverAgent"
+    :path: "../../"
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
@@ -37,6 +37,6 @@ SPEC CHECKSUMS:
   WebDriverAgentLib: ebd8bfcdfcd26f1e1c79d0fca1a1b26b8444bf45
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: ed4281c5bb2f782e59a54bb5e3c1a3a69e8250b9
+PODFILE CHECKSUM: 501635423df5a74f73f4a30ce15fa3a0cc706393
 
 COCOAPODS: 1.8.4

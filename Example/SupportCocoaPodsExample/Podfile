@@ -10,11 +10,13 @@ target 'SupportCocoaPodsExample' do
   # Pods for SupportCocoaPodsExample
 
   target 'SupportCocoaPodsExampleUITests' do
-    pod 'WebDriverAgentLib', :path => '/Users/bean/.cocoapods/repos/local/repos.local.git/TestKit/WebDriverAgent'
+#    pod 'WebDriverAgentLib', :path => '/Users/bean/.cocoapods/repos/local/repos.local.git/TestKit/WebDriverAgent'
+    pod 'WebDriverAgentLib', :path => '../../'
   end
   
   target 'SupportCocoaPodsExampleUITests-Swift' do
-    pod 'WebDriverAgentLib', :path => '/Users/bean/.cocoapods/repos/local/repos.local.git/TestKit/WebDriverAgent'
+#    pod 'WebDriverAgentLib', :path => '/Users/bean/.cocoapods/repos/local/repos.local.git/TestKit/WebDriverAgent'
+    pod 'WebDriverAgentLib', :path => '../../'
   end
   
 end
