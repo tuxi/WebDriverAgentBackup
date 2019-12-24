@@ -1,0 +1,6 @@
+framework module Pods_DouyinApp {
+  umbrella header "Pods-DouyinApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module WebDriverAgentLib {
+  umbrella header "WebDriverAgentLib-umbrella.h"
+
+  export *
+  module * { export * }
+}

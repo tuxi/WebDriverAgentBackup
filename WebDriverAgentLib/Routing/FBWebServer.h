@@ -23,12 +23,12 @@ NS_ASSUME_NONNULL_BEGIN
  Server delegate.
  */
 @property (weak, nonatomic) id<FBWebServerDelegate> delegate;
-@property (copy, nonatomic) void (^ didStartServerBlock)(void);
 
 /**
  Starts WebDriverAgent service by booting HTTP and USB server
  */
 - (void)startServing;
+- (void)startServingWithCompletion:(void (^ _Nullable)(void))completion;
 
 /**
  Stops WebDriverAgent service, shutting down HTTP and USB servers.

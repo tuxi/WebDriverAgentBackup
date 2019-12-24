@@ -1,0 +1,7 @@
+${PODS_ROOT}/Target Support Files/Pods-DouyinApp-DouyinAppUITests/Pods-DouyinApp-DouyinAppUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework
+${BUILT_PRODUCTS_DIR}/CocoaHTTPServer/CocoaHTTPServer.framework
+${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework
+${BUILT_PRODUCTS_DIR}/RoutingHTTPServer/RoutingHTTPServer.framework
+${BUILT_PRODUCTS_DIR}/WebDriverAgentLib/WebDriverAgentLib.framework
+${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework

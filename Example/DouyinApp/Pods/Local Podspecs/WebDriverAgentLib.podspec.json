@@ -1,0 +1,64 @@
+{
+  "name": "WebDriverAgentLib",
+  "version": "0.9",
+  "summary": "A short description of WebDriverAgentLib.",
+  "description": "FaceBook WebDriverAgent Backup in cocoapods.",
+  "homepage": "https://github.com/tuxi/WebDriverAgentBackup",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "xiaoyuan": "seyooe@gmail.com"
+  },
+  "social_media_url": "https://twitter.com/seyooe",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "git": "https://github.com/tuxi/WebDriverAgentBackup.git",
+    "tag": "0.9"
+  },
+  "source_files": [
+    "WebDriverAgentLib",
+    "WebDriverAgentLib/**/*.{h,m}"
+  ],
+  "public_header_files": [
+    "WebDriverAgentLib/Public/*.h",
+    "WebDriverAgentLib/Routing/FBWebServer.h",
+    "WebDriverAgentLib/Utilities/FBConfiguration.h",
+    "WebDriverAgentLib/Utilities/FBFailureProofTestCase.h",
+    "WebDriverAgentLib/PrivateHeaders/AccessibilityUtilities/AXSettings.h",
+    "WebDriverAgentLib/PrivateHeaders/UIKitCore/UIKeyboardImpl.h",
+    "WebDriverAgentLib/PrivateHeaders/TextInput/TIPreferencesController.h",
+    "WebDriverAgentLib/PrivateHeaders/XCTest/XCTestCase.h",
+    "WebDriverAgentLib/PrivateHeaders/XCTest/CDStructures.h",
+    "WebDriverAgentLib/Utilities/FBDebugLogDelegateDecorator.h",
+    "WebDriverAgentLib/PrivateHeaders/XCTest/XCDebugLogDelegate-Protocol.h"
+  ],
+  "frameworks": [
+    "XCTest",
+    "XCTAutomationSupport"
+  ],
+  "libraries": [
+    "Accessibility",
+    "xml2"
+  ],
+  "xcconfig": {
+    "HEADER_SEARCH_PATHS": "$(SDKROOT)/usr/include/libxml2",
+    "FRAMEWORK_SEARCH_PATHS": "$(PLATFORM_DIR)/Developer/Library/PrivateFrameworks",
+    "ENABLE_BITCODE": "NO"
+  },
+  "requires_arc": true,
+  "dependencies": {
+    "CocoaAsyncSocket": [
+
+    ],
+    "RoutingHTTPServer": [
+
+    ],
+    "YYCache": [
+      "~> 1.0.4"
+    ]
+  }
+}
